@@ -1,70 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LLMs For All | Local AI Software</title>
-    <meta
-      name="description"
-      content="LLMs For All develops private, on-device AI applications and custom local AI solutions for consumers and businesses."
-    >
-    <link rel="canonical" href="https://www.llmsforall.com/">
-    <meta property="og:title" content="LLMs For All">
-    <meta
-      property="og:description"
-      content="Private, on-device AI software for consumers and businesses."
-    >
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.llmsforall.com/">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main class="site-shell">
-      <section class="hero" aria-labelledby="page-title">
-        <div class="brand">LLMs For All</div>
-
-        <div class="hero-layout">
-          <div class="hero-content">
-            <p class="intro">Private, on-device LLMs.</p>
-            <h1 id="page-title">AI that works where you do.</h1>
-          </div>
-
-          <div class="signal-panel" aria-hidden="true">
-            <div class="panel-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="panel-line wide"></div>
-            <div class="panel-line"></div>
-            <div class="panel-grid">
-              <span>Local</span>
-              <span>Private</span>
-              <span>Offline</span>
-              <span>Accessible</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="work-title">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLMs For All — Local AI models and software</title>
+  <meta name="description" content="We build AI models and applications that make capable local AI practical on accessible hardware. Founded by Ben Krause and Lucia Chen.">
+  <link rel="canonical" href="https://www.llmsforall.com/">
+  <meta property="og:title" content="LLMs For All — Local AI models and software">
+  <meta property="og:description" content="Language models and software. Built to run locally.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.llmsforall.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LLMs For All — Local AI models and software">
+  <meta name="twitter:description" content="Language models and software. Built to run locally.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="product-site">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="index.html" aria-label="LLMs For All home"><img src="assets/millie-logo.png" width="416" height="406" alt=""><span>LLMs For All</span></a>
+    <nav aria-label="Main navigation"><a href="about/">About</a><a href="#contact">Contact</a><a href="https://github.com/llmsforall">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="company-intro wrap" aria-labelledby="company-title">
+      <p class="eyebrow">LLMS FOR ALL</p>
+      <h1 id="company-title">Language models<br>and software.<br><span>Built to run locally.</span></h1>
+      <p class="intro-description">We train highly compressed language models and build the inference kernels and software that make them useful on everyday hardware.</p>
+    </section>
+    <section id="software" class="software-section wrap" aria-labelledby="software-title">
+      <h2 class="section-label" id="software-title">Models and software</h2>
+      <article class="software-feature" aria-labelledby="millie-model-title">
         <div>
-          <p class="intro">What we do</p>
-          <h2 id="work-title">Consumer apps and custom business solutions for local AI.</h2>
+          <div class="software-title"><h3 id="millie-model-title">Millie</h3></div>
+          <p class="software-tagline">Capable language models. Small enough to take with you.</p>
+          <p class="platform-note">Open weights · Text and image input</p>
         </div>
-        <div class="summary-list">
-          <span>Private consumer tools</span>
-          <span>Custom local AI systems</span>
+        <div class="software-summary">
+          <p class="section-description">We trained Millie to retain useful coding and agent capabilities at very low weight precision. These 35-billion-parameter mixture-of-experts models activate about 3 billion parameters per token, with releases of approximately 7, 9, and 11 GB including vision.</p>
+          <p class="section-description model-engineering">Our custom weight formats and inference kernels make these models practical across phones, laptops, and desktops. Millie builds on Agents-A1 and the Qwen3.5 architecture.</p>
+          <div class="actions"><a class="text-link" href="https://huggingface.co/llmsforall/Millie-35B-A3B-9GB">Millie on Hugging Face ↗</a><a class="text-link" href="https://github.com/llmsforall/llama.cpp">Inference runtime ↗</a></div>
         </div>
-      </section>
-
-      <section class="contact-section" aria-labelledby="contact-title">
+      </article>
+      <article class="software-feature" aria-labelledby="millie-title">
         <div>
-          <p class="intro">Contact</p>
-          <h2 id="contact-title">Get in touch.</h2>
+          <div class="software-title"><h3 id="millie-title">Millie CLI</h3></div>
+          <p class="software-tagline">A local coding agent for your terminal.</p>
+          <p class="platform-note">macOS · Linux</p>
         </div>
-        <a class="email-link" href="mailto:support@llmsforall.com">support@llmsforall.com</a>
-      </section>
-    </main>
-  </body>
+        <div class="software-summary">
+          <p class="section-description">Read and edit code, run commands, and work through tasks on your own computer. We adapted the Codex CLI harness for Millie and bundled our inference runtime to bring the models, kernels, and agent together in one install.</p>
+          <div class="actions"><a class="button button-primary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-macos-arm64.tar.gz">Download for macOS</a><a class="button button-secondary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-linux-x86_64.tar.gz">Download for Linux</a></div><p class="muted-note">v0.1.0 · macOS: Apple silicon · Linux: x86_64</p><div class="actions"><a class="text-link" href="millie/cli/#getting-started">Installation and details →</a><a class="text-link" href="https://github.com/llmsforall/millie-cli">Source code ↗</a></div>
+        </div>
+      </article>
+    </section>
+    <section class="home-about wrap" aria-labelledby="home-about-title">
+      <h2 class="section-label" id="home-about-title">About</h2>
+      <div class="home-about-copy">
+        <p>We bring together experience in language models and consumer software to build AI for the devices people already own.</p>
+        <a class="text-link" href="about/">About LLMs For All <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <footer id="contact" class="site-footer wrap"><div class="footer-identity"><a class="footer-brand" href="index.html">LLMs For All</a><a class="footer-email" href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></footer>
+</body>
 </html>

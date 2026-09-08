@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Millie CLI — A local coding agent | LLMs For All</title>
+  <meta name="description" content="Work with your code in the terminal using Millie CLI and local, open-weight models. Find releases, model files, documentation, and source.">
+  <link rel="canonical" href="https://www.llmsforall.com/millie/cli/">
+  <link rel="icon" type="image/png" href="../../assets/millie-logo.png">
+  <meta property="og:title" content="Millie CLI — A local coding agent">
+  <meta property="og:description" content="Read code, make changes, and run commands with local, open-weight models. For macOS and Linux.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.llmsforall.com/millie/cli/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Millie CLI — A local coding agent">
+  <meta name="twitter:description" content="Read code, make changes, and run commands with local, open-weight models. For macOS and Linux.">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="product-site">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="../../index.html" aria-label="LLMs For All home"><img src="../../assets/millie-logo.png" width="416" height="406" alt=""><span>LLMs For All</span></a>
+    <nav aria-label="Main navigation"><a href="../../about/">About</a><a href="#contact">Contact</a><a href="https://github.com/llmsforall">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main" class="product-page">
+    <div class="breadcrumb wrap"><a href="../../index.html">LLMs For All</a><span aria-hidden="true">/</span><span>Millie CLI</span></div>
+    <section class="hero-section product-hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> THE TERMINAL IS YOUR WORKSPACE</p>
+        <div class="product-title"><h1 id="hero-title">Millie <span class="outline-type">CLI</span></h1></div>
+        <p class="hero-subtitle">Local models.<br>Real work.</p>
+        <p class="hero-description">Ask questions about a codebase, edit files, run commands, and iterate on a task. Millie CLI combines our highly compressed Millie models, custom inference kernels, and a Codex-based agent harness to run locally on your computer.</p>
+        <div class="actions"><a class="button button-primary" href="#getting-started">Get Millie CLI <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/llmsforall/millie-cli">View source <span aria-hidden="true">↗</span></a></div>
+        <p class="platform-note">macOS · Linux <span aria-hidden="true">/</span> Local inference · No API key</p>
+      </div>
+    </section>
+    <nav class="section-nav wrap" aria-label="On this page"><a href="#getting-started">Getting started</a><a href="#models">Models</a><a href="#contribute">Contribute</a></nav>
+    <section id="getting-started" class="detail-section wrap" aria-labelledby="start-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / GETTING STARTED</p><h2 id="start-title">Bring a project.</h2></div><p class="section-description">Get the package for your platform and follow the release instructions to set up a local model. Then open a terminal in your project.</p></div>
+      <div class="install-layout">
+        <div>
+          <h3>Get the CLI</h3>
+          <p class="section-description">Download Millie CLI v0.1.0 for your platform. Follow the installation walkthrough to set up the CLI; first launch lets you choose and download a model.</p>
+          <div class="install-options"><a class="button button-primary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-macos-arm64.tar.gz">Download for macOS</a><a class="button button-secondary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-linux-x86_64.tar.gz">Download for Linux</a></div><p class="muted-note"><a href="https://github.com/llmsforall/millie-cli#install-and-start">Installation walkthrough</a> · <a href="https://github.com/llmsforall/millie-cli/releases/tag/v0.1.0">Release notes</a> · <a href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/SHA256SUMS">Checksums</a></p>
+          <p class="muted-note">macOS on Apple silicon · Linux on x86_64</p>
+        </div>
+        <div class="command-example">
+          <p class="code-label">AFTER SETUP / EXAMPLE COMMANDS</p>
+          <div class="command-row"><span class="command-comment"># Start in your project directory</span><code><span class="shell-sign">$</span> millie</code></div>
+          <div class="command-row"><span class="command-comment"># Or run a single task</span><code><span class="shell-sign">$</span> millie exec <span class="code-string">"Explain this codebase"</span></code></div>
+          <div class="command-row"><span class="command-comment"># Continue an earlier conversation</span><code><span class="shell-sign">$</span> millie resume</code></div>
+        </div>
+      </div>
+    </section>
+    <section id="models" class="detail-section model-section wrap" aria-labelledby="model-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE MODELS</p><h2 id="model-title">Three ways to run Millie.</h2></div><p class="section-description">Choose from three open-weight models with different expert formats and file sizes. Each runs locally with the Millie runtime.</p></div>
+      <table class="model-table">
+        <caption class="visually-hidden">Millie models and approximate model-file download sizes</caption>
+        <thead><tr><th scope="col">MODEL</th><th scope="col">EXPERT FORMAT</th><th scope="col">MODEL FILE</th><th scope="col">AT A GLANCE</th></tr></thead>
+        <tbody>
+          <tr><td>7 GB</td><td>1-bit</td><td>6.30 GB</td><td>The smallest model download.</td></tr>
+          <tr><td>9 GB</td><td>Ternary</td><td>8.31 GB</td><td>The middle option in file size.</td></tr>
+          <tr><td>11 GB</td><td>2-bit</td><td>10.32 GB</td><td>The highest expert precision.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted-note">Model-file sizes are approximate decimal GB, not total RAM requirements. Runtime memory also depends on context length and configuration. See the release documentation for hardware requirements.</p>
+      <div class="actions"><a class="text-link" href="https://huggingface.co/llmsforall">Models on Hugging Face <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section id="contribute" class="contribute-section" aria-labelledby="contribute-title">
+      <div class="contribute-layout wrap"><div><p class="eyebrow">03 / BUILD WITH US</p><h2 id="contribute-title">Your next project.<br>A better Millie.</h2></div><div><p class="section-description">Real projects help us find what needs work. If Millie gets stuck, a clear issue with steps to reproduce it helps us improve the agent.</p><div class="actions"><a class="button button-primary" href="https://github.com/llmsforall/millie-cli/issues">Report an issue <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/llmsforall/millie-cli">Explore the code <span aria-hidden="true">↗</span></a></div></div></div>
+    </section>
+  </main>
+  <footer id="contact" class="site-footer wrap"><div class="footer-identity"><a class="footer-brand" href="../../index.html">LLMs For All</a><a class="footer-email" href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></footer>
+</body>
+</html>
