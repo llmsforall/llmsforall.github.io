@@ -223,3 +223,34 @@ h2 { font-size: 44px; }
 .founder-photo { width: 224px; height: 280px; object-fit: cover; border-radius: 3px; margin-bottom: 25px; }
 
 .software-summary .model-engineering { margin-top: 16px; }
+
+/* Local installation walkthrough draft. */
+.setup-section { border-top:1px solid var(--line); padding-block:42px 46px; }
+.setup-heading h2 { font-size:34px; line-height:1.2; }
+.setup-heading p { margin-top:14px; color:#4c4e53; }
+.platform-tabs { display:flex; gap:8px; margin-top:26px; border-bottom:1px solid var(--line); }
+.platform-tabs button { padding:12px 27px; border:0; border-bottom:3px solid transparent; background:transparent; color:#4c4e53; cursor:pointer; }
+.platform-tabs button[aria-selected=true] { border-bottom-color:var(--blue); color:var(--ink); font-weight:650; }
+.setup-panel { max-width:850px; }
+.setup-panel[hidden] { display:none; }
+.setup-requirements { margin:20px 0; font-size:14px; font-weight:550; }
+.setup-hardware { font-size:14px; color:#4c4e53; margin-bottom:24px; }
+.setup-steps { list-style:none; counter-reset:steps; padding:0; margin:28px 0 0; }
+.setup-steps li { counter-increment:steps; position:relative; padding:0 0 29px 48px; }
+.setup-steps li::before { content:counter(steps); position:absolute; left:0; top:-3px; width:29px; height:29px; border:1px solid #c8c9cb; border-radius:50%; text-align:center; line-height:28px; font-size:14px; }
+.setup-steps h3,.setup-return h3,.setup-help h3 { font-size:19px; line-height:1.35; margin-bottom:10px; }
+.setup-steps p { line-height:1.65; }
+.setup-command { display:flex; align-items:flex-start; gap:14px; justify-content:space-between; background:#efefed; border:1px solid #dedfe1; border-radius:4px; margin:12px 0; padding:14px 15px; }
+.setup-command code { white-space:pre-wrap; overflow-wrap:anywhere; font-size:13px; line-height:1.65; min-width:0; }
+.copy-command { background:#fafaf9; border:1px solid #c8c9cb; border-radius:3px; font-size:12px; padding:5px 9px; cursor:pointer; flex-shrink:0; }
+.setup-small { color:#4c4e53; font-size:14px; }
+.setup-steps blockquote { margin:14px 0; padding:13px 17px; border-left:3px solid var(--blue); background:#efefed; }
+.setup-return { max-width:850px; border-top:1px solid var(--line); padding-top:22px; }
+.setup-return p { color:#4c4e53; }
+.setup-help { margin-top:24px; max-width:850px; border-block:1px solid var(--line); padding:17px 0; }
+.setup-help summary { cursor:pointer; font-weight:550; }
+.setup-help > div { padding-top:22px; }
+.setup-help h3 { margin-top:16px; }
+.setup-help p { margin-bottom:14px; font-size:15px; }
+.setup-downloads { font-size:13px; margin-top:22px; line-height:1.8; }
+@media(max-width:760px) { .setup-heading h2 { font-size:28px; } .setup-steps li { padding-left:39px; } .setup-command { padding:11px; gap:8px; } .setup-command code { font-size:12px; } .setup-section { padding-block:30px; } }

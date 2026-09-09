@@ -28,7 +28,18 @@
       <p class="intro-description">We train highly compressed language models and build the inference kernels and software that make them useful on everyday hardware.</p>
     </section>
     <section id="software" class="software-section wrap" aria-labelledby="software-title">
-      <h2 class="section-label" id="software-title">Models and software</h2>
+      <h2 class="section-label" id="software-title">Software and models</h2>
+      <article class="software-feature" aria-labelledby="millie-title">
+        <div>
+          <div class="software-title"><h3 id="millie-title">Millie CLI</h3></div>
+          <p class="software-tagline">A local coding agent for your terminal.</p>
+          <p class="platform-note">macOS · Linux</p>
+        </div>
+        <div class="software-summary">
+          <p class="section-description">Read and edit code, run commands, and work through tasks on your own computer. We adapted the Codex CLI harness for Millie and bundled our inference runtime to bring the models, kernels, and agent together in one install.</p>
+          <div class="actions"><a class="button button-primary" href="#get-started" data-platform="mac">Get started on Mac</a><a class="button button-secondary" href="#get-started" data-platform="linux">Get started on Linux</a></div><p class="muted-note">Apple silicon Macs · Linux x86_64 · Windows support coming soon</p><div class="actions"><a class="text-link" href="https://github.com/llmsforall/millie-cli">Source code ↗</a></div>
+        </div>
+      </article>
       <article class="software-feature" aria-labelledby="millie-model-title">
         <div>
           <div class="software-title"><h3 id="millie-model-title">Millie</h3></div>
@@ -41,18 +52,26 @@
           <div class="actions"><a class="text-link" href="https://huggingface.co/llmsforall/Millie-35B-A3B-9GB">Millie on Hugging Face ↗</a><a class="text-link" href="https://github.com/llmsforall/llama.cpp">Inference runtime ↗</a></div>
         </div>
       </article>
-      <article class="software-feature" aria-labelledby="millie-title">
-        <div>
-          <div class="software-title"><h3 id="millie-title">Millie CLI</h3></div>
-          <p class="software-tagline">A local coding agent for your terminal.</p>
-          <p class="platform-note">macOS · Linux</p>
-        </div>
-        <div class="software-summary">
-          <p class="section-description">Read and edit code, run commands, and work through tasks on your own computer. We adapted the Codex CLI harness for Millie and bundled our inference runtime to bring the models, kernels, and agent together in one install.</p>
-          <div class="actions"><a class="button button-primary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-macos-arm64.tar.gz">Download for macOS</a><a class="button button-secondary" href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-linux-x86_64.tar.gz">Download for Linux</a></div><p class="muted-note">v0.1.0 · macOS: Apple silicon · Linux: x86_64</p><div class="actions"><a class="text-link" href="millie/cli/#getting-started">Installation and details →</a><a class="text-link" href="https://github.com/llmsforall/millie-cli">Source code ↗</a></div>
-        </div>
-      </article>
     </section>
+
+<section id="get-started" class="setup-section wrap" aria-labelledby="setup-title">
+  <div class="setup-heading"><h2 id="setup-title">Get started with Millie CLI</h2><p>Run a coding agent locally in your own project. No account or API key required.</p></div>
+  <div class="platform-tabs" role="tablist" aria-label="Installation platform"><button id="tab-mac" type="button" role="tab" aria-selected="true" aria-controls="setup-mac" data-platform="mac">Mac</button><button id="tab-linux" type="button" role="tab" aria-selected="false" aria-controls="setup-linux" tabindex="-1" data-platform="linux">Linux</button></div>
+<div id="setup-mac" class="setup-panel" role="tabpanel" aria-labelledby="tab-mac" tabindex="0" >
+<p class="setup-requirements">Apple silicon (M1 or newer) · macOS 12+ · 16 GB+ unified memory</p><ol class="setup-steps"><li><h3>Open Terminal and install</h3><p>Press Command + Space, type “Terminal”, and press Return. Paste the command below, then press Return.</p><div class="setup-command"><code>curl -fsSL https://raw.githubusercontent.com/llmsforall/millie-cli/main/scripts/install/install.sh | sh</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p class="setup-small">The installer downloads the CLI and its runtime. No compiling or administrator password needed for the default installation.</p></li>
+<li><h3>Activate and check</h3><p>Run these commands one at a time. The first makes Millie available in this terminal.</p><div class="setup-command"><code>export PATH=&quot;$HOME/.local/bin:$PATH&quot;</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><div class="setup-command"><code>millie --version</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p class="setup-small">You should see a version such as <code>millie 0.1.0</code>.</p></li>
+<li><h3>Choose your project folder</h3><p>Type <code>cd</code> followed by a space, drag your project folder from Finder into Terminal, then press Return. This selects the folder Millie will work in.</p><p class="setup-small">Use a folder containing the code you want help with. If the folder cannot be found, check its path before continuing.</p></li>
+<li><h3>Start Millie and choose a model</h3><div class="setup-command"><code>millie</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p>Millie recommends a model for your machine. Select one and approve its download. The model is a separate download of several GB; Millie shows the size before asking. Wait for the download and loading to finish.</p></li>
+<li><h3>Try your first task</h3><p>When Millie’s input prompt is ready, type:</p><blockquote>Explain what this project does. Don’t change any files yet.</blockquote><p class="setup-small">You can then ask questions, request code changes, or work through a task in the same conversation.</p></li></ol></div><div id="setup-linux" class="setup-panel" role="tabpanel" aria-labelledby="tab-linux" tabindex="0" hidden>
+<p class="setup-requirements">Linux x86_64 · glibc 2.31+ (for example, Ubuntu 20.04+)</p><p class="setup-hardware">NVIDIA and AMD GPU acceleration uses Vulkan. For 4–8 GB GPUs with 16 GB system RAM, see the <a href="https://github.com/llmsforall/millie-cli/blob/main/docs/memory.md#linux-system-ram-and-gpu-vram">hybrid configurations</a>. These setups need more testing on small GPUs and AMD hardware; fit and speed vary.</p><ol class="setup-steps"><li><h3>Open Terminal and install</h3><p>Open your terminal using Bash or Zsh. Paste the command below, then press Enter.</p><div class="setup-command"><code>curl -fsSL https://raw.githubusercontent.com/llmsforall/millie-cli/main/scripts/install/install.sh | sh</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p class="setup-small">The installer downloads the CLI and its runtime. No compiling or administrator password needed for the default installation.</p></li>
+<li><h3>Activate and check</h3><p>Run these commands one at a time. The first makes Millie available in this terminal.</p><div class="setup-command"><code>export PATH=&quot;$HOME/.local/bin:$PATH&quot;</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><div class="setup-command"><code>millie --version</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p class="setup-small">You should see a version such as <code>millie 0.1.0</code>.</p></li>
+<li><h3>Choose your project folder</h3><p>Enter your project folder. Replace the example path below with your own folder’s path; keep the quotes.</p><div class="setup-command"><code>cd &quot;$HOME/projects/my-project&quot;</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p class="setup-small">Use a folder containing the code you want help with. If the folder cannot be found, check its path before continuing.</p></li>
+<li><h3>Start Millie and choose a model</h3><div class="setup-command"><code>millie</code><button type="button" class="copy-command" aria-label="Copy command">Copy</button></div><p>Millie recommends a model for your machine. Select one and approve its download. The model is a separate download of several GB; Millie shows the size before asking. Wait for the download and loading to finish.</p></li>
+<li><h3>Try your first task</h3><p>When Millie’s input prompt is ready, type:</p><blockquote>Explain what this project does. Don’t change any files yet.</blockquote><p class="setup-small">You can then ask questions, request code changes, or work through a task in the same conversation.</p></li></ol></div><div class="setup-return"><h3>Next time</h3><p>Open Terminal, enter your project folder, and run <code>millie</code>. There’s no need to reinstall: downloaded models are reused. Run <code>millie resume</code> to return to a saved conversation.</p></div>
+<details class="setup-help"><summary>Having trouble?</summary><div><h3>“millie: command not found”</h3><p>Run the activation command from step 2 again, then check <code>millie --version</code>. If that still fails, follow the <a href="https://github.com/llmsforall/millie-cli#install-and-start">installation troubleshooting steps</a>.</p><h3>Model won’t load or memory is tight?</h3><p>Close other memory-heavy applications and consult the <a href="https://github.com/llmsforall/millie-cli/blob/main/docs/memory.md">model and memory guide</a>. GPU placement and context settings affect how much memory you need.</p><p>For other problems, <a href="https://github.com/llmsforall/millie-cli/issues">report an issue</a> with your hardware, operating system, selected model, and error message, or <a href="mailto:support@llmsforall.com">email us</a>.</p></div></details>
+<p class="setup-downloads">Prefer a direct download? <a href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-macos-arm64.tar.gz">Mac archive</a> · <a href="https://github.com/llmsforall/millie-cli/releases/download/v0.1.0/millie-0.1.0-linux-x86_64.tar.gz">Linux archive</a> · <a href="https://github.com/llmsforall/millie-cli#install-and-start">Full documentation ↗</a></p>
+<p class="visually-hidden" id="copy-status" role="status" aria-live="polite"></p>
+</section>
     <section class="home-about wrap" aria-labelledby="home-about-title">
       <h2 class="section-label" id="home-about-title">About</h2>
       <div class="home-about-copy">
@@ -62,5 +81,6 @@
     </section>
   </main>
   <footer id="contact" class="site-footer wrap"><div class="footer-identity"><a class="footer-brand" href="index.html">LLMs For All</a><a class="footer-email" href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></footer>
+<script src="setup.js"></script>
 </body>
 </html>
