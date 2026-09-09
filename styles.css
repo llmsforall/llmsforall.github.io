@@ -254,3 +254,30 @@ h2 { font-size: 44px; }
 .setup-help p { margin-bottom:14px; font-size:15px; }
 .setup-downloads { font-size:13px; margin-top:22px; line-height:1.8; }
 @media(max-width:760px) { .setup-heading h2 { font-size:28px; } .setup-steps li { padding-left:39px; } .setup-command { padding:11px; gap:8px; } .setup-command code { font-size:12px; } .setup-section { padding-block:30px; } }
+
+
+/* Blog: complete benchmark tables remain available at every width. */
+.blog-content { max-width: 960px; padding-block: 58px 72px; }
+.blog-content h1 { font-size: clamp(34px, 4.5vw, 58px); line-height: 1.12; margin: 20px 0 28px; max-width: 880px; }
+.blog-content h2 { font-size: 30px; line-height: 1.2; margin: 46px 0 18px; }
+.blog-content p { margin: 18px 0; max-width: 790px; line-height: 1.75; }
+.blog-content .post-lead { font-size: 22px; line-height: 1.55; }
+.benchmark-scroll { overflow-x: auto; margin: 28px 0 16px; }
+.benchmark-table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+.benchmark-table caption { text-align: left; font-weight: 650; padding-bottom: 14px; }
+.benchmark-table th, .benchmark-table td { text-align: right; padding: 14px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.benchmark-table th:first-child { text-align: left; padding-left: 0; }
+.benchmark-table thead th { font-size: 12px; font-weight: 600; border-bottom-color: var(--ink); }
+.benchmark-table tbody th { font-weight: 550; }
+.blog-content .table-note { font-size: 13px; color: var(--muted); }
+.blog-preview { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 24px; }
+.blog-preview h2 { margin-top: 20px; }
+@media (max-width: 760px) { .blog-content { padding-block: 34px 48px; } .blog-content .post-lead { font-size: 19px; } .blog-content h2 { font-size: 26px; } }
+
+.benchmark-table .model-group-start:not(:first-child) > * { border-top: 2px solid #77797e; }
+
+
+.post-links { padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.post-links a { margin-right: 24px; display: inline-block; }
+
+.blog-command { padding: 20px; background: #ededeb; overflow-x: auto; font-size: 15px; }
