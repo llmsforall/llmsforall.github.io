@@ -281,3 +281,13 @@ h2 { font-size: 44px; }
 .post-links a { margin-right: 24px; display: inline-block; }
 
 .blog-command { padding: 20px; background: #ededeb; overflow-x: auto; font-size: 15px; }
+
+/* Publication dates are part of the article, not just metadata. */
+.blog-content .post-date { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 12px; }
+.blog-preview .post-date { margin-top: 4px; }
+.blog-preview h2 { margin-top: 12px; }
+.release-post h3 { margin-top: 32px; font-size: 22px; line-height: 1.35; }
+
+.demo-video { margin: 34px 0 44px; }
+.demo-video video { display: block; width: 100%; max-width: 300px; max-height: 70vh; background: #f8f8f8; border: 1px solid var(--line); border-radius: 18px; }
+.demo-video figcaption { max-width: 580px; margin-top: 14px; font-size: 14px; line-height: 1.6; color: var(--muted); }

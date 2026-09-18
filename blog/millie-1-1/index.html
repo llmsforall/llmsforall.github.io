@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>A 35-billion-parameter AI assistant, running on your iPhone — LLMs For All</title><link href="https://www.llmsforall.com/blog/millie-1-1/" rel="canonical"/><meta content="Meet Millie for iPhone: a 35-billion-parameter assistant that runs locally in roughly 4 GB of memory." name="description"/><meta content="A 35-billion-parameter AI assistant, running on your iPhone" property="og:title"/><meta content="Meet Millie for iPhone: a 35-billion-parameter assistant that runs locally in roughly 4 GB of memory." property="og:description"/><meta content="https://www.llmsforall.com/blog/millie-1-1/" property="og:url"/><meta content="article" property="og:type"/><meta content="2026-09-18" property="article:published_time"/><meta content="summary" name="twitter:card"/><link href="../../styles.css?v=3efee17f52a4" rel="stylesheet"/><style>.encoding-note { margin:24px 0; padding:16px 0; border-block:1px solid var(--line); } .encoding-note summary { cursor:pointer; font-weight:550; } .encoding-note p { margin-bottom:0; } .benchmark-table th { line-height:1.4; }</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap">
+<a aria-label="LLMs For All home" class="wordmark" href="../../index.html"><img alt="" height="406" src="../../assets/millie-logo.png" width="416"/><span>LLMs For All</span></a>
+<nav aria-label="Main navigation"><a href="../../about/">About</a><a aria-current="page" href="../../blog/">Blog</a><a href="#contact">Contact</a><a href="https://github.com/llmsforall">GitHub <span aria-hidden="true">↗</span></a></nav>
+</header><main class="blog-content wrap" id="main"><article class="release-post"><p class="post-date"><time datetime="2026-09-18">September 18, 2026</time></p><h1>A 35-billion-parameter AI assistant, running on your iPhone</h1>
+<p class="post-lead">Millie runs entirely on your phone in roughly 4 GB of memory—delivering stronger benchmark performance, faster generation, and lower memory use than a leading 27-billion-parameter phone model.</p>
+<p>We built Millie because we want capable AI to run on hardware people already own. <a href="../millie-cli/">Our first release</a> brought local coding to Macs and Linux PCs. Now we’re bringing Millie to the iPhone.</p><p>We trained the compressed model, built the memory-saving runtime and kernels, and brought them together in an iPhone app.</p>
+<p>You can talk through an idea, work on a message, or ask about a photo. Your conversations stay on your device, with no account required. Once the model is downloaded, it works offline.</p>
+<p class="post-links"><a href="https://apps.apple.com/us/app/millie-by-llms-for-all/id6800522384">Download Millie on the App Store</a><a href="https://huggingface.co/llmsforall/Millie-1.1-35B-A3B-Ternary">Model weights ↗</a><a href="https://github.com/llmsforall/millie-runtime/">Inference runtime ↗</a></p>
+<figure class="demo-video">
+<video aria-label="Millie running offline on an iPhone, narrated by co-founder Ben Krause" controls="" playsinline="" poster="/assets/millie-iphone-demo.jpg" preload="none">
+<source src="/assets/millie-iphone-demo.mp4" type="video/mp4"/>
+<a href="/assets/millie-iphone-demo.mp4">Watch the Millie demo</a>
+</video>
+<figcaption>Millie running offline on an iPhone. Typing is sped up; responses generate in real time.</figcaption>
+</figure>
+<h2>Model quality</h2>
+<p>We evaluated how well Millie answers across knowledge, reasoning, coding, and instruction-following tasks. “Unrestricted” runs the compressed model normally with a 16-bit KV cache. The phone memory configuration biases the model toward selecting resident experts—those already in RAM—and loads others as needed. It also uses an 8-bit Q8 KV cache to reduce the memory needed for conversation context.</p>
+<div aria-label="Model evaluation results" class="benchmark-scroll" role="region" tabindex="0"><table class="benchmark-table">
+<thead>
+<tr>
+<th scope="col">Benchmark</th>
+<th scope="col" style="text-align: right;">Qwen 3.6 35B-A3B</th>
+<th scope="col" style="text-align: right;">Compressed model, unrestricted</th>
+<th scope="col" style="text-align: right;">Phone memory configuration</th>
+<th scope="col" style="text-align: right;">1-bit Bonsai 27B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">GPQA Diamond</th>
+<td style="text-align: right;">86.36%</td>
+<td style="text-align: right;">75.76%</td>
+<td style="text-align: right;">74.75%</td>
+<td style="text-align: right;">63.64%</td>
+</tr>
+<tr>
+<th scope="row">HumanEval+</th>
+<td style="text-align: right;">93.29%</td>
+<td style="text-align: right;">90.24%</td>
+<td style="text-align: right;">91.46%</td>
+<td style="text-align: right;">89.02%</td>
+</tr>
+<tr>
+<th scope="row">IFBench, loose</th>
+<td style="text-align: right;">68.33%</td>
+<td style="text-align: right;">62.00%</td>
+<td style="text-align: right;">60.33%</td>
+<td style="text-align: right;">52.00%</td>
+</tr>
+<tr>
+<th scope="row">IFBench, strict</th>
+<td style="text-align: right;">63.67%</td>
+<td style="text-align: right;">60.00%</td>
+<td style="text-align: right;">59.00%</td>
+<td style="text-align: right;">50.33%</td>
+</tr>
+<tr>
+<th scope="row">MuSR</th>
+<td style="text-align: right;">66.93%</td>
+<td style="text-align: right;">64.15%</td>
+<td style="text-align: right;">66.40%</td>
+<td style="text-align: right;">64.55%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bonsai results are from our evaluations of the original 1-bit Bonsai 27B using its published benchmark decoding settings.</p>
+<p>These tests cover broad academic knowledge, difficult science questions, writing code that passes tests, following explicit instructions, and reasoning through longer scenarios. IFBench's loose and strict scores are two ways of checking the same instruction-following tasks.</p>
+<h3>MMLU Redux Clean, by category</h3>
+<p>Across the 5,431 questions in the clean question set, the phone memory configuration scored 91.68%. The table below shows results by category and overall.</p>
+<div aria-label="MMLU Redux category results" class="benchmark-scroll" role="region" tabindex="0"><table class="benchmark-table">
+<thead>
+<tr>
+<th scope="col">Category</th>
+<th scope="col" style="text-align: right;">Questions</th>
+<th scope="col" style="text-align: right;">Qwen 3.6 35B-A3B</th>
+<th scope="col" style="text-align: right;">Compressed model, unrestricted</th>
+<th scope="col" style="text-align: right;">Phone memory configuration</th>
+<th scope="col" style="text-align: right;">1-bit Bonsai 27B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">STEM</th>
+<td style="text-align: right;">1,760</td>
+<td style="text-align: right;">96.82%</td>
+<td style="text-align: right;">95.28%</td>
+<td style="text-align: right;">95.45%</td>
+<td style="text-align: right;">91.82%</td>
+</tr>
+<tr>
+<th scope="row">Humanities</th>
+<td style="text-align: right;">1,218</td>
+<td style="text-align: right;">92.20%</td>
+<td style="text-align: right;">90.23%</td>
+<td style="text-align: right;">90.39%</td>
+<td style="text-align: right;">81.12%</td>
+</tr>
+<tr>
+<th scope="row">Social sciences</th>
+<td style="text-align: right;">1,154</td>
+<td style="text-align: right;">92.89%</td>
+<td style="text-align: right;">90.38%</td>
+<td style="text-align: right;">90.73%</td>
+<td style="text-align: right;">81.37%</td>
+</tr>
+<tr>
+<th scope="row">Other</th>
+<td style="text-align: right;">1,299</td>
+<td style="text-align: right;">92.61%</td>
+<td style="text-align: right;">89.07%</td>
+<td style="text-align: right;">88.61%</td>
+<td style="text-align: right;">75.75%</td>
+</tr>
+<tr>
+<th scope="row"><strong>Overall</strong></th>
+<td style="text-align: right;"><strong>5,431</strong></td>
+<td style="text-align: right;"><strong>93.94%</strong></td>
+<td style="text-align: right;"><strong>91.62%</strong></td>
+<td style="text-align: right;"><strong>91.68%</strong></td>
+<td style="text-align: right;"><strong>83.35%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Capability after compression and memory savings</h3><p>Despite its extreme compression, Millie retains much of the original model’s capability. In phone memory mode, it scores 91.68% on MMLU Redux versus 93.94% for Qwen 3.6, 91.46% versus 93.29% on HumanEval+, and 66.40% versus 66.93% on MuSR. It also outperforms 1-bit Bonsai across every benchmark tested.</p>
+<p>Moving to the memory-restricted configuration did not appear to affect performance on average. Scores are slightly noisy because each evaluation used a single sampled run, but these results show no obvious overall difference.</p>
+<p>The evaluations simulate the phone’s expert-routing configuration and Q8 KV cache; they were not run on the phone itself.</p><h2>Speed in use</h2><p>There are two parts to responsiveness. Prefill is the time spent reading a prompt or conversation before generating an answer. Decode is the rate at which the answer is generated. Both matter: a model that writes quickly can still leave you waiting if it takes a long time to read what you sent.</p>
+<p>Using the current shipping model on an iPhone 17 Pro, Millie generated real answers at <strong>17.72 tokens per second</strong>. For context, PrismML reports <strong>11.0 tokens per second</strong> for 1-bit Bonsai 27B on an iPhone 17 Pro Max. Our 17.72 tokens/s result is about 60% higher, despite a larger workload: a 729-token starting context and 238 generated tokens, versus Bonsai’s depth-zero, 128-token test.</p>
+<div aria-label="iPhone decode speed" class="benchmark-scroll" role="region" tabindex="0"><table class="benchmark-table">
+<thead>
+<tr>
+<th scope="col">Model and device</th>
+<th scope="col" style="text-align: right;">Starting context</th>
+<th scope="col" style="text-align: right;">Generated tokens</th>
+<th scope="col" style="text-align: right;">Decode speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Millie · iPhone 17 Pro</th>
+<td style="text-align: right;">729 tokens</td>
+<td style="text-align: right;">238</td>
+<td style="text-align: right;">17.72 tokens/s</td>
+</tr>
+<tr>
+<th scope="row">Millie · iPhone 17 Pro</th>
+<td style="text-align: right;">2,354 tokens</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">16.54 tokens/s</td>
+</tr>
+<tr>
+<th scope="row">1-bit Bonsai 27B · iPhone 17 Pro Max, published</th>
+<td style="text-align: right;">Depth 0</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">11.0 tokens/s</td>
+</tr>
+</tbody>
+</table></div>
+<p>Our decode tests use real prompts and complete generated answers.</p>
+<p>For <strong>512-token prefill</strong>, Millie took <strong>3.80 seconds</strong>, or <strong>134.6 tokens per second</strong>, versus Bonsai's published <strong>111 tokens per second</strong>. Millie processed the input in 128-token microbatches.</p>
+<p>Millie's figures combine two runs per workload, each in a fresh process with a cooldown between runs. The harness uses the shipping inference framework, 64 resident experts per layer, a +1 routing bias, a Q8 attention cache, and a 20,480-token context allocation. The decode prompt lengths include the system prompt and chat template; decode timing excludes prefill. These are text-only runtime measurements, excluding the vision encoder and full app UI. No run produced a memory warning or an elevated thermal reading.</p>
+<p>Bonsai's figures come from <a href="https://github.com/PrismML-Eng/Bonsai-demo/blob/main/bonsai-27b-whitepaper.pdf">PrismML's whitepaper, Table 8 and Appendix D</a>: 128-token decode at depth zero, no speculative decoding or vision tower, using MLX Swift on the phone. This is a comparison with published results, rather than a matched test of both models on the same phone and prompts.</p><h2>Getting the whole thing onto a phone</h2>
+<p>A small model file is only part of the problem. The phone also needs memory for the conversation, intermediate computations, image processing, and the app itself. And an app cannot use all of the RAM listed in the phone's specifications.</p>
+<p>Millie's flagship is a mixture-of-experts model: it contains many groups of weights, called experts, and selects a small number for each token it processes. It has 35 billion parameters in total, with roughly 3 billion active per token. That gives us a way to reduce both computation and the amount of model data that needs to stay in memory.</p>
+<p>We combine a trained, highly compressed model with an <a href="https://github.com/llmsforall/millie-runtime/">open-source runtime</a> that keeps a subset of its experts in RAM, biases the model toward selecting those resident experts, and loads others from storage as needed. The low-memory configuration also uses a Q8 KV cache. Its expert weights use a ternary representation: each weight is zero, positive, or negative, with shared scaling factors. Our mask-and-sign encoding stores these weights in 1.5 bits each before scaling overhead, with at least half constrained to zero. The model, the kernels that perform its calculations, and the way we manage memory all matter. Compressing the weights alone would not give us the same result.</p>
+<p>The resulting system runs in roughly 4 GB of memory, including the vision encoder and conversation state. Memory use varies with context and workload. The flagship reliably supports iPhone 15 Pro and Pro Max, and iPhone 16 and newer.</p>
+<p>In a separate text-only memory test on the physical iPhone 17 Pro, Millie peaked at <strong>3.63 GB while processing a 20,000-token prompt and generating another 128 tokens</strong>. This run used a Q8 KV cache. It completed without memory warnings or elevated thermal readings.</p>
+<p>For comparison, PrismML publishes the following text-only peak memory figures for 1-bit Bonsai 27B:</p>
+<div aria-label="Memory usage comparison" class="benchmark-scroll" role="region" tabindex="0"><table class="benchmark-table">
+<thead>
+<tr>
+<th scope="col">Model / runtime</th>
+<th scope="col">Context tested</th>
+<th scope="col">KV cache</th>
+<th scope="col" style="text-align: right;">Peak RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Millie · iPhone 17 Pro</th>
+<td>20,000 input tokens + 128 generated</td>
+<td>Q8</td>
+<td style="text-align: right;"><strong>3.63 GB</strong></td>
+</tr>
+<tr>
+<th scope="row">1-bit Bonsai 27B · MLX, published</th>
+<td>4K / 10K</td>
+<td>Uncompressed, FP16</td>
+<td style="text-align: right;">5.9 / 6.3 GB</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-note">Memory figures are text-only and use decimal GB. Millie’s measurement includes loading, prefill, and generation but excludes the app UI. Bonsai’s <a href="https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit#peak-memory-at-context">published figures</a> use a different measurement setup and do not specify the device.</p>
+<p>In internal tests, we have even run the flagship on an iPhone 14 Pro Max with only 6 GB of RAM, including at long contexts. But memory pressure can cause warnings or crashes on that device, so we chose not to make the flagship available on 6 GB phones. The smaller Millie Flash model is available on supported older phones.</p>
+<h2>Other approaches to compression and memory savings</h2>
+<p>PrismML also offers the original <strong>ternary Bonsai 27B</strong> and <strong>ternary Bonsai 2 27B</strong>, announced on September 17. These larger dense models are very unlikely to run well within the memory budgets of the iPhones we target. The original ternary build occupies about 7.2 GB; Bonsai 2's compact packing uses 5.95 GB for language weights alone, while its alternative packing uses 7.21 GB. PrismML publishes no phone throughput figures for these ternary releases. <a href="https://prismml.com/news/bonsai-27b">Original release</a>, <a href="https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf">Bonsai 2 model card</a>.</p>
+<p>Our iPhone 17 Pro exposes roughly 6 GB to the app, and many of the phones we target have only 8 GB of physical RAM in total. A dense model whose weights alone consume nearly the entire app budget leaves insufficient room for its conversation cache, intermediate computations, and the app. Offloading dense layers to storage would require rereading those weights for every generated token. That is much more expensive than loading the small subset of experts selected by a sparse model. This is why we treat the 1-bit Bonsai release as the practical phone comparison, and do not consider the larger ternary or conventional 2-bit dense 27B builds suitable for our target phones.</p>
+<p><strong>Edge0</strong> streams experts from storage. We compared its <a href="https://github.com/Edge0-AI/Edge0#requirements">released macOS runtime</a> with Millie on the same 24 GiB M5 Mac, reserving 16 GiB to leave roughly 8 GiB for the models, macOS, and other apps.</p>
+<div aria-label="Mac decode under memory pressure" class="benchmark-scroll" role="region" tabindex="0"><table class="benchmark-table">
+<thead>
+<tr>
+<th scope="col">Real-answer decode under 16 GiB memory pressure</th>
+<th scope="col" style="text-align: right;">Edge0 35B</th>
+<th scope="col" style="text-align: right;">Millie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Explanation of sky colors</th>
+<td style="text-align: right;">2.25 tokens/s</td>
+<td style="text-align: right;"><strong>29.85 tokens/s</strong></td>
+</tr>
+<tr>
+<th scope="row">Python interval-merging function</th>
+<td style="text-align: right;">2.10 tokens/s</td>
+<td style="text-align: right;"><strong>29.89 tokens/s</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Millie generated answers <strong>13–14 times faster</strong> in these two tests. Each task used one run per model with the same prompt, non-thinking template, sampling settings, and 512-token limit. Millie used 64 resident experts per layer and Q8 KV. Its coding answer hit the output limit; the other answers finished naturally.</p>
+<p>In a separate inspection, Edge0 reported about 3 GiB of MLX allocations while sampled total process memory (RSS) peaked at 9.9 GiB—its allocator figure alone did not capture the full memory footprint.</p>
+<h2>Using Millie</h2>
+<p>The app offers two models. The flagship Millie is for more demanding questions and can understand photos. Millie Flash is smaller and intended for faster replies. You can adjust the flagship's reasoning effort and personalize how Millie responds.</p>
+<p>The flagship download is about 8.6 GB, including its vision component. That is larger than its runtime memory footprint because the full model is stored on the phone while only part of the expert weights stays in memory at once. Flash's download is about 2 GB.</p>
+<p>After that initial download, you can use Millie without an internet connection. It is useful for conversations you want to keep on your own device, and in places where a cloud assistant is unavailable.</p>
+<p>We are a two-person, bootstrapped company, and there are many more phones and usage patterns than we can test ourselves. If you try Millie, we would like to hear how it works on your phone: which model you used, how responsive it felt, and anything that went wrong. You can reach us at <a href="mailto:support@llmsforall.com">support@llmsforall.com</a>.</p>
+<p class="post-links"><a href="https://apps.apple.com/us/app/millie-by-llms-for-all/id6800522384">Get Millie for iPhone</a></p></article></main><footer class="site-footer wrap" id="contact"><div class="footer-identity"><a class="footer-brand" href="../../index.html">LLMs For All</a><a class="footer-email" href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></footer></body></html>

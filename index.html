@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="LLMs For All — Local AI models and software">
   <meta name="twitter:description" content="Language models and software. Built to run locally.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3efee17f52a4">
 </head>
 <body class="product-site">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,6 +29,19 @@
     </section>
     <section id="software" class="software-section wrap" aria-labelledby="software-title">
       <h2 class="section-label" id="software-title">Software and models</h2>
+      <article class="software-feature" aria-labelledby="millie-phone-title">
+        <div>
+          <div class="software-title"><h3 id="millie-phone-title">Millie for iPhone</h3></div>
+          <p class="software-tagline">A private AI assistant. Right on your phone.</p>
+          <p class="platform-note">iOS · Works offline after download</p>
+        </div>
+        <div class="software-summary">
+          <p class="section-description">Talk through an idea, write a message, or ask about a photo. Our flagship 35-billion-parameter model runs entirely on your phone, using roughly 4 GB of memory. Your conversations stay on your device, with no account required.</p>
+          <div class="actions"><a class="button button-primary" href="https://apps.apple.com/us/app/millie-by-llms-for-all/id6800522384">Get Millie on the App Store</a></div>
+          <p class="muted-note">Flagship model: iPhone 15 Pro / Pro Max, or iPhone 16 and newer</p>
+          <div class="actions"><a class="text-link" href="blog/millie-1-1/">Meet Millie for iPhone →</a></div>
+        </div>
+      </article>
       <article class="software-feature" aria-labelledby="millie-title">
         <div>
           <div class="software-title"><h3 id="millie-title">Millie CLI</h3></div>
@@ -47,9 +60,9 @@
           <p class="platform-note">Open weights · Text and image input</p>
         </div>
         <div class="software-summary">
-          <p class="section-description">We trained Millie to retain useful coding and agent capabilities at very low weight precision. These 35-billion-parameter mixture-of-experts models activate about 3 billion parameters per token, with releases of approximately 7, 9, and 11 GB including vision.</p>
-          <p class="section-description model-engineering">Our custom weight formats and inference kernels make these models practical across phones, laptops, and desktops. Millie builds on Agents-A1 and the Qwen3.5 architecture.</p>
-          <div class="actions"><a class="text-link" href="https://huggingface.co/llmsforall/Millie-35B-A3B-9GB">Millie on Hugging Face ↗</a><a class="text-link" href="https://github.com/llmsforall/llama.cpp">Inference runtime ↗</a></div>
+          <p class="section-description">We train highly compressed models for local reasoning, conversation, and coding. Our 35-billion-parameter mixture-of-experts models use roughly 3 billion parameters per token. Millie 1.1 brings our ternary model to phones; the original Millie family powers our coding agent.</p>
+          <p class="section-description model-engineering">We build the weight formats, inference kernels, and memory management that make these models practical across phones, laptops, and desktops. Millie 1.1 builds on Qwen 3.6 35B-A3B; the original coding models build on Agents-A1.</p>
+          <div class="actions"><a class="text-link" href="https://huggingface.co/llmsforall/Millie-1.1-35B-A3B-Ternary">Millie 1.1 on Hugging Face ↗</a><a class="text-link" href="https://github.com/llmsforall/millie-runtime/">Inference runtime ↗</a></div>
         </div>
       </article>
     </section>
