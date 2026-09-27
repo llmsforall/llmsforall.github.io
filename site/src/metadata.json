@@ -1,0 +1,276 @@
+{
+  "/about": {
+    "title": "About \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/about/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Meet Ben Krause and Lucia Chen, the founders of LLMs For All. We build language models and software for local AI."
+      },
+      {
+        "property": "og:title",
+        "content": "About \u2014 LLMs For All"
+      },
+      {
+        "property": "og:description",
+        "content": "Meet founders Ben Krause and Lucia Chen. Language models and software for local AI."
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:url",
+        "content": "https://www.llmsforall.com/about/"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "About \u2014 LLMs For All"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Meet founders Ben Krause and Lucia Chen. Language models and software for local AI."
+      }
+    ]
+  },
+  "/blog": {
+    "title": "Blog \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/blog/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "News and updates from LLMs For All."
+      },
+      {
+        "property": "og:title",
+        "content": "Blog \u2014 LLMs For All"
+      },
+      {
+        "property": "og:description",
+        "content": "News and updates from LLMs For All."
+      },
+      {
+        "property": "og:url",
+        "content": "https://www.llmsforall.com/blog/"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      }
+    ]
+  },
+  "/blog/millie-1-1": {
+    "title": "A 35-billion-parameter AI assistant, running on your iPhone \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/blog/millie-1-1/",
+    "meta": [
+      {
+        "content": "Meet Millie for iPhone: a 35-billion-parameter assistant that runs locally in roughly 4 GB of memory.",
+        "name": "description"
+      },
+      {
+        "content": "A 35-billion-parameter AI assistant, running on your iPhone",
+        "property": "og:title"
+      },
+      {
+        "content": "Meet Millie for iPhone: a 35-billion-parameter assistant that runs locally in roughly 4 GB of memory.",
+        "property": "og:description"
+      },
+      {
+        "content": "https://www.llmsforall.com/blog/millie-1-1/",
+        "property": "og:url"
+      },
+      {
+        "content": "article",
+        "property": "og:type"
+      },
+      {
+        "content": "2026-09-18",
+        "property": "article:published_time"
+      },
+      {
+        "content": "summary",
+        "name": "twitter:card"
+      }
+    ]
+  },
+  "/blog/millie-cli": {
+    "title": "Millie: bringing local coding agents to everyday hardware \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/blog/millie-cli/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links."
+      },
+      {
+        "property": "og:title",
+        "content": "Millie: bringing local coding agents to everyday hardware \u2014 LLMs For All"
+      },
+      {
+        "property": "og:description",
+        "content": "Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links."
+      },
+      {
+        "property": "og:url",
+        "content": "https://www.llmsforall.com/blog/millie-cli/"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-09-09T11:39:11-07:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      }
+    ]
+  },
+  "/": {
+    "title": "LLMs For All \u2014 Local AI models and software",
+    "canonical": "https://www.llmsforall.com/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "We build AI models and applications that make capable local AI practical on accessible hardware. Founded by Ben Krause and Lucia Chen."
+      },
+      {
+        "property": "og:title",
+        "content": "LLMs For All \u2014 Local AI models and software"
+      },
+      {
+        "property": "og:description",
+        "content": "Language models and software. Built to run locally."
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:url",
+        "content": "https://www.llmsforall.com/"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "LLMs For All \u2014 Local AI models and software"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Language models and software. Built to run locally."
+      }
+    ]
+  },
+  "/millie/cli": {
+    "title": "Get started with Millie CLI \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/millie/cli/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Work with your code in the terminal using Millie CLI and local, open-weight models. Find releases, model files, documentation, and source."
+      },
+      {
+        "property": "og:title",
+        "content": "Millie CLI \u2014 A local coding agent"
+      },
+      {
+        "property": "og:description",
+        "content": "Read code, make changes, and run commands with local, open-weight models. For macOS and Linux."
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:url",
+        "content": "https://www.llmsforall.com/millie/cli/"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Millie CLI \u2014 A local coding agent"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Read code, make changes, and run commands with local, open-weight models. For macOS and Linux."
+      }
+    ]
+  },
+  "/notices": {
+    "title": "Notices | LLMs For All",
+    "canonical": "https://www.llmsforall.com/notices/",
+    "meta": [
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      },
+      {
+        "name": "description",
+        "content": "Model and open-source license notices for software by LLMs For All, Inc."
+      }
+    ]
+  },
+  "/privacy": {
+    "title": "Privacy Policy | LLMs For All",
+    "canonical": "https://www.llmsforall.com/privacy/",
+    "meta": [
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      },
+      {
+        "name": "description",
+        "content": "How Millie handles your information: your conversations stay on your device."
+      }
+    ]
+  },
+  "/support": {
+    "title": "Support | LLMs For All",
+    "canonical": "https://www.llmsforall.com/support/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Help with Millie and other LLMs For All apps, including device requirements and how to get in touch."
+      }
+    ]
+  },
+  "/terms": {
+    "title": "Terms of Service | LLMs For All",
+    "canonical": "https://www.llmsforall.com/terms/",
+    "meta": [
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      },
+      {
+        "name": "description",
+        "content": "Terms of service for Millie and other LLMs For All, Inc. software."
+      }
+    ]
+  },
+  "/demo": {
+    "title": "Request a demo \u2014 LLMs For All",
+    "canonical": "https://www.llmsforall.com/demo/",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Tell us what you\u2019re building and where you want AI to run."
+      }
+    ]
+  }
+}

@@ -1,8 +1,26 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Millie: bringing local coding agents to everyday hardware — LLMs For All</title><link rel="canonical" href="https://www.llmsforall.com/blog/millie-cli/"><meta name="description" content="Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links."><meta property="og:title" content="Millie: bringing local coding agents to everyday hardware — LLMs For All"><meta property="og:description" content="Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links."><meta property="og:url" content="https://www.llmsforall.com/blog/millie-cli/"><meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-09T11:39:11-07:00"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="../../styles.css?v=3efee17f52a4"><style>.encoding-note { margin:24px 0; padding:16px 0; border-block:1px solid var(--line); } .encoding-note summary { cursor:pointer; font-weight:550; } .encoding-note p { margin-bottom:0; } .benchmark-table th { line-height:1.4; }</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap">
-    <a class="wordmark" href="../../index.html" aria-label="LLMs For All home"><img src="../../assets/millie-logo.png" width="416" height="406" alt=""><span>LLMs For All</span></a>
-    <nav aria-label="Main navigation"><a href="../../about/">About</a><a href="../../blog/" aria-current="page">Blog</a><a href="#contact">Contact</a><a href="https://github.com/llmsforall">GitHub <span aria-hidden="true">↗</span></a></nav>
-  </header><main id="main" class="blog-content wrap"><article class="release-post">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Millie: bringing local coding agents to everyday hardware — LLMs For All</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofia+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-CteiLgoY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DkESdrbS.css">
+      <link rel="canonical" href="https://www.llmsforall.com/blog/millie-cli/" data-page-meta>
+    <meta name="description" content="Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links." data-page-meta>
+    <meta property="og:title" content="Millie: bringing local coding agents to everyday hardware — LLMs For All" data-page-meta>
+    <meta property="og:description" content="Introducing Millie: compressed language models and a complete local coding agent for Macs and Linux PCs. Results, hardware support, and installation links." data-page-meta>
+    <meta property="og:url" content="https://www.llmsforall.com/blog/millie-cli/" data-page-meta>
+    <meta property="og:type" content="article" data-page-meta>
+    <meta property="article:published_time" content="2026-09-09T11:39:11-07:00" data-page-meta>
+    <meta name="twitter:card" content="summary" data-page-meta>
+  </head>
+  <body>
+    <div id="root"><link rel="preload" as="image" href="/assets/Logo-CTX92bKX.png"/><div><a class="skip-link" href="#main">Skip to content</a><header class="home-header"><a class="home-wordmark" aria-label="LLMs For All home" href="/" data-discover="true"><img class="mark" src="/assets/Logo-CTX92bKX.png" width="32" height="32" alt=""/><span>LLMsForALL</span></a><nav class="home-nav" aria-label="Main navigation"><a href="/" data-discover="true">Home</a><a href="/blog" data-discover="true">Blog</a><a href="https://github.com/llmsforall">Github</a><a href="/about" data-discover="true">About</a><a class="demo-btn" href="/demo" data-discover="true">Request a demo</a></nav></header><div><style>.encoding-note { margin:24px 0; padding:16px 0; border-block:1px solid var(--line); } .encoding-note summary { cursor:pointer; font-weight:550; } .encoding-note p { margin-bottom:0; } .benchmark-table th { line-height:1.4; }</style>
+<main id="main" class="blog-content wrap"><article class="release-post">
 
 <p class="post-date"><time datetime="2026-09-09">September 9, 2026</time></p>
 <h1>Millie: bringing local coding agents to everyday hardware</h1>
@@ -60,4 +78,6 @@
 <p>Inference measurements were collected September 6, 2026 using random-token inputs. The phone and Mac benchmarks use different random-token sequences. Warmup is excluded. Phone rates average three short-context rounds and two long-context rounds; Mac rates average three repetitions per metric.</p>
 <p>Both use four CPU threads, F16 KV caches, and Flash Attention. Phone context capacity is 16,640 tokens. The 7GB, 9GB, and 11GB phone configurations place routed experts from 0, 4, and 20 layers on CPU, respectively, with microbatches of 512, 128, and 512. Shared experts remain on GPU.</p>
 <p>Mac microbatch size is 512 except for the 9GB model at 12 GiB pressure, which uses 128. All routed experts remain on GPU except in the 11GB model’s 12 GiB pressure run, which uses 20 CPU routed-expert layers. Each row uses one fixed configuration for all four measurements.</p>
-</article></main><footer id="contact" class="site-footer wrap"><div class="footer-identity"><a class="footer-brand" href="../../index.html">LLMs For All</a><a class="footer-email" href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></footer></body></html>
+</article></main></div><footer class="home-footer"><div class="footer-grid"><a class="home-wordmark" aria-label="LLMs For All home" href="/" data-discover="true"><img class="mark" src="/assets/Logo-CTX92bKX.png" width="32" height="32" alt=""/><span>LLMsForALL</span></a><div><h2>Software</h2><a href="https://apps.apple.com/us/app/millie-by-llms-for-all/id6800522384">Millie for iPhone</a><a href="/#cli" data-discover="true">Millie CLI</a><a href="/#models" data-discover="true">Models</a></div><div><h2>Resources</h2><a href="https://github.com/llmsforall">GitHub</a><a href="https://huggingface.co/llmsforall">Hugging Face</a></div><div><h2>Company</h2><a href="/about" data-discover="true">About</a><a href="/blog" data-discover="true">Blog</a><a href="mailto:support@llmsforall.com">support@llmsforall.com</a></div></div><p class="copyright">© 2026 LLMs for All, Inc. All rights reserved.</p></footer></div></div>
+  </body>
+</html>
